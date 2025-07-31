@@ -7,7 +7,7 @@
 .container {
     background-color: #ccc;
     height: 100vh;
-    /* width: 100vw; */
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
@@ -24,6 +24,7 @@
     height: 100vh;
     grid-area: sidebar;
     padding: 10px 20px;
+    width: 20vw;
 }
 
 .sidebar ul {
@@ -42,13 +43,36 @@
 .header {
     background-color: aqua;
     height: 20vh;
-    width: 60vw;
+    width: 80vw;
     grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "top top"
+        "bottom bottom";
 }
 
-.main-block {
+
+.header-top {
+    grid-area: top;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.search-area,
+.account-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.header-bottom {
+    grid-area: bottom;
+}
+
+v .main-block {
     background-color: blanchedalmond;
     height: 80vh;
-    width: 60vw;
+    width: 80vw;
     grid-area: main;
 }
