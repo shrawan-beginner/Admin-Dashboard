@@ -41,9 +41,12 @@
 }
 
 .header {
-    background-color: aqua;
+    background-color: #fff;
+    color: #000;
     height: 20vh;
     width: 80vw;
+    padding-inline: 20px;
+    padding-block: 10px;
     grid-area: header;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -54,25 +57,143 @@
 
 
 .header-top {
+    border: 1px solid black;
     grid-area: top;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
 }
 
-.search-area,
-.account-area {
+.search-area {
+    border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 40px auto;
+    grid-column-gap: 30px;
+}
+
+.search-icon {
+    width: 40px;
+    height: 40px;
+    /* padding: 10px; */
+}
+
+.search-bar {
+    max-width: 350px;
+}
+
+.search-bar input {
+    background-color: #aaa;
+    border-radius: 20px;
+    border: 0px;
+    width: 100%;
+}
+
+.account-area {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 40px 40px auto;
+    grid-column-gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.bell {
+    width: 20px;
+    height: 20px;
+}
+
+.small-profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-name-top {
+    font-size: 14px;
+    text-transform: capitalize;
 }
 
 .header-bottom {
     grid-area: bottom;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
 }
 
-v .main-block {
+.profile-area {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-column-gap: 5px;
+}
+
+.intro .profile-intro {
+    font-size: 14px;
+}
+
+.intro .profile-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.button-area {
+    grid-column-gap: 5px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-fill {
+    background-color: #1992D4;
+    color: #fff;
+}
+
+.main-block {
     background-color: blanchedalmond;
     height: 80vh;
     width: 80vw;
     grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "project announcement"
+        "project announcement"
+        "project trending"
+        "project trending";
+}
+
+.projects {
+    grid-area: project;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+}
+
+.project-name {
+    height: 100px;
+    width: 100px;
+    background-color: grey
+}
+
+.announcements {
+    grid-area: announcement;
+}
+
+.announcement {
+    height: 50px;
+    width: 50px;
+    background-color: darkgray;
+}
+
+.trendings {
+    grid-area: trending;
+}
+
+.trending {
+    height: 100px;
+    width: 100px;
+    background-color: darkblue;
 }
