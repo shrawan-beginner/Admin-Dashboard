@@ -157,11 +157,10 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "project announcement"
-        "project announcement"
-        "project trending"
         "project trending";
     padding-block: 10px;
     padding-inline: 20px;
+    grid-column-gap: 20px;
 }
 
 .projects-block {
@@ -178,14 +177,25 @@ h3 {
 .project-groups {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 150px;
-    grid-gap: 10px;
+    grid-auto-rows: minmax(200px, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
 
 .project-name {
-    height: 100px;
-    width: 100px;
-    background-color: #fff
+    /*! height: 100px; */
+    /*! width: 100px; */
+    background-color: #fff;
+    display: grid;
+    padding: 20px;
+    border-left: 10px solid orange;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.icons {
+    align-self: flex-end;
+    justify-self: flex-end;
 }
 
 .announcements {
@@ -193,18 +203,27 @@ h3 {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 10px 30px;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
 }
 
 .announcement {
     width: 100%;
     height: auto;
-    padding-block: 10px;
+    padding-block: 15px;
 }
 
 .announcement:not(:last-child) {
     border-bottom: 1px solid #aaa
+}
+
+.announcement h3 {
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+
+.announcement p {
+    font-size: 14px;
 }
 
 .trendings {
@@ -220,4 +239,7 @@ h3 {
     height: auto;
     width: 100%;
     padding-block: 10px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-column-gap: 10px;
 }
